@@ -18,7 +18,7 @@ public class AudioManager : Singleton<AudioManager>
         this.PlaySong(startingSong);
     }
 
-    public void PlaySong(AudioClip clip)
+    private void PlaySong(AudioClip clip)
     {
         audioSource.clip = clip;
         audioSource.Play();
