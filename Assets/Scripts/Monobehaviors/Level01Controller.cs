@@ -10,10 +10,11 @@ public class Level01Controller : MonoBehaviour
     [SerializeField] private Text scoreValueField = null;
     private int currentScore;
 
+    #region Monobehavior Methods
+
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        SetToFPSCursor();
     }
 
     private void Update()
@@ -28,28 +29,41 @@ public class Level01Controller : MonoBehaviour
         }
     }
 
+    #endregion
+
+    #region Public Functions
+
     public void TogglePauseMenu()
     {
         if (pauseMenuPanel.activeSelf) // about to deactivate
         {
-            Time.timeScale = 1f;
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+            ToggleTimeScale();
+            SetToFPSCursor();
         }
         else // about to activate
         {
-            Time.timeScale = 0f;
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+            ToggleTimeScale();
+            SetToMenuCursor();
         }
         pauseMenuPanel.SetActive(!pauseMenuPanel.activeSelf);
     }
 
     public void ExitLevel()
     {
-        Time.timeScale = 1f;
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        ToggleTimeScale();
+        SetToMenuCursor();
+
+        SaveHighScore();
+
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    #endregion
+
+    #region Private Functions
+
+    private void SaveHighScore()
+    {
         int highScore = PlayerPrefs.GetInt("HighScore");
         PlayerPrefs.SetInt("LastRunScore", currentScore);
         if (currentScore > highScore)
@@ -57,8 +71,23 @@ public class Level01Controller : MonoBehaviour
             PlayerPrefs.SetInt("HighScore", currentScore);
             Debug.Log("New high score: " + currentScore.ToString());
         }
+    }
 
-        SceneManager.LoadScene("MainMenu");
+    private void SetToFPSCursor()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
+    private void SetToMenuCursor()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
+    private void ToggleTimeScale() // side effects are bad but ???, the entire function is ONLY a side effect
+    {
+        Time.timeScale = Time.timeScale == 0f ? 1f : 0f; // basic ternary, if 0, make it 1, otherwise make it 0
     }
 
     private void IncreaseScore(int value)
@@ -66,4 +95,6 @@ public class Level01Controller : MonoBehaviour
         currentScore += value;
         scoreValueField.text = currentScore.ToString();
     }
+
+    #endregion
 }
