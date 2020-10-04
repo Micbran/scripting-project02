@@ -1984,7 +1984,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e98ea4133a96894f8bb685ad780d828, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStats: {fileID: 0}
   healthBarValue: {fileID: 1037060545}
   healthBarForeground: {fileID: 697567702}
 --- !u!1 &1289332891
@@ -3112,7 +3111,7 @@ PrefabInstance:
     - target: {fileID: 3505762805617705028, guid: a06ef725796793f4c8f3a1590d286173,
         type: 3}
       propertyPath: damage
-      value: 1
+      value: 0.25
       objectReference: {fileID: 0}
     - target: {fileID: 3505762805617705032, guid: a06ef725796793f4c8f3a1590d286173,
         type: 3}
