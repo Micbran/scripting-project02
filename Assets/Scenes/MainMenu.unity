@@ -1097,7 +1097,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9629d8206ca521946b33e8866326e480, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingSong: {fileID: 8300000, guid: b77e27438c5138e47b54af70708efb54, type: 3}
+  SoundFX:
+  - effect: 0
+    clip: {fileID: 8300000, guid: 09ab42bd961926e4c8439f03892e82db, type: 3}
+  startingSong: {fileID: 8300000, guid: 1bf76c1607b8c11498d6d16fe2191aef, type: 3}
 --- !u!82 &875222481
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1110,7 +1113,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.564
   m_Pitch: 1
   Loop: 1
   Mute: 0

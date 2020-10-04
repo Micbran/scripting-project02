@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public abstract class Manager<T> : MonoBehaviour where T : MonoBehaviour
+public abstract class Manager<T> : MonoBehaviour where T: MonoBehaviour
 {
     private static T instance;
 
@@ -9,12 +9,12 @@ public abstract class Manager<T> : MonoBehaviour where T : MonoBehaviour
         get { return instance; }
         set
         {
-            if (instance == null)
+            if(instance == null)
             {
                 instance = value;
                 DontDestroyOnLoad(instance.gameObject);
             }
-            else if (instance != value)
+            else if(instance != value)
             {
                 Destroy(value.gameObject);
             }

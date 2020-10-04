@@ -1,8 +1,11 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
-public class AudioManager : Singleton<AudioManager>
+public class AudioManager : Manager<AudioManager>
 {
+    public List<SoundFXDefinition> SoundFX;
+
     private AudioSource audioSource;
 
     [SerializeField] private AudioClip startingSong = null;
@@ -22,5 +25,11 @@ public class AudioManager : Singleton<AudioManager>
     {
         audioSource.clip = clip;
         audioSource.Play();
+    }
+
+    public void PlaySoundEffect(SoundEffect soundEffect)
+    {
+        AudioClip effect = SoundFX.Find(sfx => sfx.effect == soundEffect).clip;
+        audioSource.PlayOneShot(effect);
     }
 }

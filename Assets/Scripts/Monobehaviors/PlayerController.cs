@@ -1,10 +1,13 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 [RequireComponent(typeof(FPSInput))]
 [RequireComponent(typeof(FPSMotor))]
 [RequireComponent(typeof(ActorStats))]
 public class PlayerController : MonoBehaviour
 {
+    public event Action OnPlayerDeath = delegate { };
+
     private FPSInput input = null;
     private FPSMotor motor = null;
     private ActorStats stats = null;
@@ -19,6 +22,8 @@ public class PlayerController : MonoBehaviour
 
     private float currentMoveSpeed;
     private float currentTurnSpeed;
+
+    #region Monobehaviour Methods
 
     private void Awake()
     {
@@ -52,6 +57,10 @@ public class PlayerController : MonoBehaviour
         stats.PlayerDied -= OnDeath;
     }
 
+    #endregion
+
+    #region Callbacks
+
     private void OnMove(Vector3 movement)
     {
         motor.Move(movement * currentMoveSpeed);
@@ -83,12 +92,13 @@ public class PlayerController : MonoBehaviour
     private void OnShoot()
     {
         muzzleFlash.Play();
+        AudioManager.Instance.PlaySoundEffect(SoundEffect.Shoot);
     }
 
     private void OnDeath()
     {
-        Debug.Log("Player Died!");
-        //TODO display "death" UI. Dear lord.
+        OnPlayerDeath.Invoke();
     }
 
+    #endregion
 }

@@ -4,26 +4,48 @@ using UnityEngine.UI;
 
 public class Level01Controller : MonoBehaviour
 {
-
+    [SerializeField] private GameObject playerUIPanel = null;
     [SerializeField] private GameObject pauseMenuPanel = null;
+    [SerializeField] private GameObject lossScreenPanel = null;
 
     [SerializeField] private Text scoreValueField = null;
     private int currentScore;
 
+    [SerializeField] private Text lossScreenScoreValueField = null;
+
+    private PlayerController player = null;
+
+    private bool levelControlsDisabled = false;
+
     #region Monobehavior Methods
+
+    private void Awake()
+    {
+        player = FindObjectOfType<PlayerController>();
+    }
 
     private void Start()
     {
         SetToFPSCursor();
     }
 
+    private void OnEnable()
+    {
+        player.OnPlayerDeath += HandlePlayerDeath;
+    }
+
+    private void OnDisable()
+    {
+        player.OnPlayerDeath -= HandlePlayerDeath;
+    }
+
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(Input.GetKeyDown(KeyCode.Escape) && !levelControlsDisabled)
         {
             TogglePauseMenu();
         }
-        else if(Input.GetKeyDown(KeyCode.Q))
+        else if(Input.GetKeyDown(KeyCode.Q) && !levelControlsDisabled)
         {
             IncreaseScore(5);
         }
@@ -58,6 +80,15 @@ public class Level01Controller : MonoBehaviour
         SceneManager.LoadScene("MainMenu");
     }
 
+    public void ReloadLevel()
+    {
+        ToggleTimeScale();
+        SetToFPSCursor();
+
+        SaveHighScore();
+
+        SceneManager.LoadScene("Level01");
+    }
     #endregion
 
     #region Private Functions
@@ -94,6 +125,22 @@ public class Level01Controller : MonoBehaviour
     {
         currentScore += value;
         scoreValueField.text = currentScore.ToString();
+    }
+
+    #endregion
+
+    #region Callbacks
+
+    private void HandlePlayerDeath()
+    {
+        levelControlsDisabled = true;
+        ToggleTimeScale();
+        SetToMenuCursor();
+
+        playerUIPanel.SetActive(false);
+        lossScreenPanel.SetActive(true);
+
+        lossScreenScoreValueField.text = currentScore.ToString();
     }
 
     #endregion

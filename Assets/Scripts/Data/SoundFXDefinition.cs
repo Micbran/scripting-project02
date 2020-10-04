@@ -10,11 +10,6 @@ public struct SoundFXDefinition
 [System.Serializable]
 public enum SoundEffect
 {
-    CoinCollect,
-    GameOver,
-    PlayerDeath,
-    SpeedPowerupCollect,
-    SpeedPowerupExpire,
-    InvincbilityPowerupCollect,
-    Win
+    Shoot,
+    Damaged
 }
