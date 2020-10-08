@@ -30,10 +30,6 @@ public class ActorStats : MonoBehaviour
             {
                 PlayerDied.Invoke();
             }
-            else
-            {
-                Destroy(gameObject);
-            }
         }
     }
 

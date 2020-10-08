@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     private FPSInput input = null;
     private FPSMotor motor = null;
     private ActorStats stats = null;
+    private FireWeapon fire = null;
 
     [SerializeField] private float moveSpeed = 0.1f;
     [SerializeField] private float sprintMoveSpeed = 0.2f;
@@ -30,6 +31,7 @@ public class PlayerController : MonoBehaviour
         input = GetComponent<FPSInput>();
         motor = GetComponent<FPSMotor>();
         stats = GetComponent<ActorStats>();
+        fire = GetComponent<FireWeapon>();
 
         currentMoveSpeed = moveSpeed;
         currentTurnSpeed = turnSpeed;
@@ -92,7 +94,10 @@ public class PlayerController : MonoBehaviour
     private void OnShoot()
     {
         muzzleFlash.Play();
+        fire.Shoot();
         AudioManager.Instance.PlaySoundEffect(SoundEffect.Shoot);
+
+        
     }
 
     private void OnDeath()
