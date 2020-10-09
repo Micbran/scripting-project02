@@ -4,8 +4,9 @@ public class FireWeapon : MonoBehaviour
 {
     [SerializeField] private Camera playerCamera = null;
     [SerializeField] private Transform rayOrigin = null;
+    [SerializeField] private ParticleSystem hitParticles = null;
+
     private RaycastHit objectHit;
-    // Start ray from barrel end, in direction of camera
 
     public void Shoot()
     {
@@ -20,6 +21,7 @@ public class FireWeapon : MonoBehaviour
             {
                 h.OnHit(gameObject, 10f); // TODO put damage numbers in somewhere
             }
+            Instantiate(hitParticles, objectHit.point, Quaternion.LookRotation(objectHit.normal, Vector3.up));
         }
         else
         {
