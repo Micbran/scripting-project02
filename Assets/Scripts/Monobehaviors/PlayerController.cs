@@ -96,8 +96,6 @@ public class PlayerController : MonoBehaviour
         muzzleFlash.Play();
         fire.Shoot();
         AudioManager.Instance.PlaySoundEffect(SoundEffect.Shoot);
-
-        
     }
 
     private void OnDeath()
