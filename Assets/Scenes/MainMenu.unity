@@ -1100,6 +1100,14 @@ MonoBehaviour:
   SoundFX:
   - effect: 0
     clip: {fileID: 8300000, guid: 09ab42bd961926e4c8439f03892e82db, type: 3}
+  - effect: 1
+    clip: {fileID: 8300000, guid: 2e318b39be61f4d47901a5ac60ec07a2, type: 3}
+  - effect: 2
+    clip: {fileID: 8300000, guid: ee55a4c7fda3d2a439f730be38bc1bab, type: 3}
+  - effect: 3
+    clip: {fileID: 8300000, guid: 63bbcd41e463ef142a0c1a5b0b5e11b4, type: 3}
+  - effect: 4
+    clip: {fileID: 8300000, guid: 0f350df5051f88443bcbd8d7299e7979, type: 3}
   startingSong: {fileID: 8300000, guid: 1bf76c1607b8c11498d6d16fe2191aef, type: 3}
 --- !u!82 &875222481
 AudioSource:
@@ -1113,7 +1121,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.564
+  m_Volume: 0.406
   m_Pitch: 1
   Loop: 1
   Mute: 0

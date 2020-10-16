@@ -30,6 +30,6 @@ public class AudioManager : Manager<AudioManager>
     public void PlaySoundEffect(SoundEffect soundEffect)
     {
         AudioClip effect = SoundFX.Find(sfx => sfx.effect == soundEffect).clip;
-        audioSource.PlayOneShot(effect);
+        audioSource.PlayOneShot(effect, 0.8f);
     }
 }

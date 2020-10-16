@@ -11,5 +11,8 @@ public struct SoundFXDefinition
 public enum SoundEffect
 {
     Shoot,
-    Damaged
+    Damaged,
+    EnemyFire,
+    Pickup,
+    EnemyDeath
 }

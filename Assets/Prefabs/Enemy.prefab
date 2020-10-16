@@ -173,6 +173,7 @@ GameObject:
   - component: {fileID: 8134146229709367102}
   - component: {fileID: 5513996369263315793}
   - component: {fileID: 8262741438448542165}
+  - component: {fileID: -4555349466322568434}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -282,6 +283,19 @@ MonoBehaviour:
   shootRange: 10
   seekRange: 20
   projectile: {fileID: 11400000, guid: 3810ba3d12230c344b47e1441c314527, type: 2}
+--- !u!114 &-4555349466322568434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2940959031864305759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4243588cd525cd47949821a06e308d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundEffectToPlay: 4
 --- !u!1 &3123585376054135466
 GameObject:
   m_ObjectHideFlags: 0

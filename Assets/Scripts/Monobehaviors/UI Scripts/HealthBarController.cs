@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,6 +10,9 @@ public class HealthBarController : MonoBehaviour
 
     [SerializeField] private Text healthBarValue = null;
     [SerializeField] private Image healthBarForeground = null;
+    [SerializeField] private Image healthBarMiddleground = null;
+    [SerializeField] private GameObject HealthFeedbackFlash = null;
+    [SerializeField] private float secondaryHealthBarDrainRate = 0.0002f;
 
     private float maxHealth = 100;
 
@@ -37,10 +41,23 @@ public class HealthBarController : MonoBehaviour
         playerStats.PlayerTakeDamage -= UpdateHealthBar;
     }
 
+    private void Update()
+    {
+        if (healthBarMiddleground.fillAmount <= healthBarForeground.fillAmount)
+            return;
+        healthBarMiddleground.fillAmount -= secondaryHealthBarDrainRate;
+
+    }
+
     private void UpdateHealthBar(float currentHealth)
     {
         healthBarValue.text = Mathf.RoundToInt(Mathf.Max(currentHealth, 0)).ToString();
-
+        float pastFillAmount = healthBarForeground.fillAmount;
         healthBarForeground.fillAmount = Mathf.Max(currentHealth, 0) / maxHealth;
+
+        if(pastFillAmount >= healthBarForeground.fillAmount) // essentially, "if damage was taken" also means you can damage by zero
+        {
+            HealthFeedbackFlash.SetActive(true);
+        }
     }
 }

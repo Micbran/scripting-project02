@@ -44,12 +44,13 @@ public class EnemyController : MonoBehaviour
             if (attackOffCooldown && (distanceFromPlayer <= shootRange))
             {
                 attackCooldownTimer = projectile.projectileCooldown;
-                Shoot();
+                ShootProjectile();
+                AudioManager.Instance.PlaySoundEffect(SoundEffect.EnemyFire);
             }
         }
     }
 
-    private void Shoot()
+    private void ShootProjectile()
     {
         Projectile bullet = Instantiate(projectile.projectileToFire, endOfBarrel.position, Quaternion.identity);
         bullet.Fire(gameObject, playerTransform.position, projectile.projectileSpeed, projectile.projectileRange, projectile.projectileDamage, projectile.lifeTimeAfterHit);
