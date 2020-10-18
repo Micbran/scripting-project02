@@ -14,5 +14,6 @@ public enum SoundEffect
     Damaged,
     EnemyFire,
     Pickup,
-    EnemyDeath
+    EnemyDeath,
+    CrateBreak
 }

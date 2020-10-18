@@ -174,6 +174,7 @@ GameObject:
   - component: {fileID: 5513996369263315793}
   - component: {fileID: 8262741438448542165}
   - component: {fileID: -4555349466322568434}
+  - component: {fileID: 6113738114059916650}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -224,6 +225,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 20
+  maxHealth: 20
   isPlayer: 0
 --- !u!114 &3309983026880840975
 MonoBehaviour:
@@ -296,6 +298,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundEffectToPlay: 4
+--- !u!114 &6113738114059916650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2940959031864305759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9e7d7a145f07f543850633f69c10d97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointValue: 20
 --- !u!1 &3123585376054135466
 GameObject:
   m_ObjectHideFlags: 0

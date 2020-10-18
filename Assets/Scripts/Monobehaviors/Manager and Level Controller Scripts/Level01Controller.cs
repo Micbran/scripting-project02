@@ -7,6 +7,7 @@ public class Level01Controller : MonoBehaviour
     [SerializeField] private GameObject playerUIPanel = null;
     [SerializeField] private GameObject pauseMenuPanel = null;
     [SerializeField] private GameObject lossScreenPanel = null;
+    [SerializeField] private GameObject crosshair = null;
 
     [SerializeField] private Text scoreValueField = null;
     private int currentScore;
@@ -44,10 +45,6 @@ public class Level01Controller : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Escape) && !levelControlsDisabled)
         {
             TogglePauseMenu();
-        }
-        else if(Input.GetKeyDown(KeyCode.Q) && !levelControlsDisabled)
-        {
-            IncreaseScore(5);
         }
     }
 
@@ -89,6 +86,13 @@ public class Level01Controller : MonoBehaviour
 
         SceneManager.LoadScene("Level01");
     }
+
+    public void IncreaseScore(int value)
+    {
+        currentScore += value;
+        scoreValueField.text = currentScore.ToString();
+    }
+
     #endregion
 
     #region Private Functions
@@ -119,12 +123,6 @@ public class Level01Controller : MonoBehaviour
     private void ToggleTimeScale() // side effects are bad but ???, the entire function is ONLY a side effect
     {
         Time.timeScale = Time.timeScale == 0f ? 1f : 0f; // basic ternary, if 0, make it 1, otherwise make it 0
-    }
-
-    private void IncreaseScore(int value)
-    {
-        currentScore += value;
-        scoreValueField.text = currentScore.ToString();
     }
 
     #endregion

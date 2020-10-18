@@ -14,7 +14,7 @@ public class HealthBarController : MonoBehaviour
     [SerializeField] private GameObject HealthFeedbackFlash = null;
     [SerializeField] private float secondaryHealthBarDrainRate = 0.0002f;
 
-    private float maxHealth = 100;
+    private float maxHealth = 1;
 
     private void Awake()
     {
@@ -23,6 +23,7 @@ public class HealthBarController : MonoBehaviour
         {
             Debug.LogError("HealthBarController could not find actor stats of player.");
         }
+        maxHealth = playerStats.MaxHealth;
     }
 
     private void Start()
@@ -55,7 +56,7 @@ public class HealthBarController : MonoBehaviour
         float pastFillAmount = healthBarForeground.fillAmount;
         healthBarForeground.fillAmount = Mathf.Max(currentHealth, 0) / maxHealth;
 
-        if(pastFillAmount >= healthBarForeground.fillAmount) // essentially, "if damage was taken" also means you can damage by zero
+        if(pastFillAmount > healthBarForeground.fillAmount) // essentially, "if damage was taken"
         {
             HealthFeedbackFlash.SetActive(true);
         }
