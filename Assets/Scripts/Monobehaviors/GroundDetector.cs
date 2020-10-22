@@ -8,11 +8,13 @@ public class GroundDetector : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        GroundCollide.Invoke();
+        if(!other.gameObject.CompareTag("Pickup"))
+            GroundCollide.Invoke();
     }
 
     private void OnTriggerExit(Collider other)
     {
-        GroundLeft.Invoke();
+        if(!other.gameObject.CompareTag("Pickup"))
+            GroundLeft.Invoke();
     }
 }

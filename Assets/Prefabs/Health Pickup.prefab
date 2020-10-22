@@ -201,9 +201,10 @@ GameObject:
   - component: {fileID: 5742708258485657445}
   - component: {fileID: 2880627549261831674}
   - component: {fileID: 2883947915823396403}
+  - component: {fileID: 4211136430998481225}
   m_Layer: 2
   m_Name: Health Pickup
-  m_TagString: Untagged
+  m_TagString: Pickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -249,3 +250,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthToHeal: 10
+--- !u!114 &4211136430998481225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7443145182048020288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0ffa48b1b8842b4abd6982f48fc095c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  artToMove: {fileID: 448468543755556608}
+  spinSpeed: 40
+  yDistance: 0.4
+  bounceTime: 3
+  delta: 0.1

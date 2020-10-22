@@ -7,7 +7,8 @@ public class Level01Controller : MonoBehaviour
     [SerializeField] private GameObject playerUIPanel = null;
     [SerializeField] private GameObject pauseMenuPanel = null;
     [SerializeField] private GameObject lossScreenPanel = null;
-    [SerializeField] private GameObject crosshair = null;
+    [SerializeField] private GameObject powerupBarPanel = null;
+    [SerializeField] private PowerupBarController powerupController = null;
 
     [SerializeField] private Text scoreValueField = null;
     private int currentScore;
@@ -17,6 +18,7 @@ public class Level01Controller : MonoBehaviour
     private PlayerController player = null;
 
     private bool levelControlsDisabled = false;
+    private bool doubleScoreActive = false;
 
     #region Monobehavior Methods
 
@@ -28,6 +30,7 @@ public class Level01Controller : MonoBehaviour
     private void Start()
     {
         SetToFPSCursor();
+        AudioManager.Instance.PlaySoundEffect(SoundEffect.AnnouncerBreakTheTargets);
     }
 
     private void OnEnable()
@@ -89,8 +92,26 @@ public class Level01Controller : MonoBehaviour
 
     public void IncreaseScore(int value)
     {
+        if (doubleScoreActive)
+            value *= 2;
+
         currentScore += value;
         scoreValueField.text = currentScore.ToString();
+    }
+
+    public void ActivateDoubleScorePower(float time)
+    {
+        doubleScoreActive = true;
+        powerupController.PowerUpDuration = time;
+        powerupController.enabled = true;
+        powerupBarPanel.SetActive(true);
+    }
+
+    public void DeactiveDoubleScorePower()
+    {
+        doubleScoreActive = false;
+        powerupController.enabled = false;
+        powerupBarPanel.SetActive(false);
     }
 
     #endregion

@@ -15,5 +15,7 @@ public enum SoundEffect
     EnemyFire,
     Pickup,
     EnemyDeath,
-    CrateBreak
+    CrateBreak,
+    AnnouncerBreakTheTargets,
+    TargetBreak
 }

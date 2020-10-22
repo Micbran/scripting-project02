@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class HealthBarController : MonoBehaviour
@@ -29,7 +26,6 @@ public class HealthBarController : MonoBehaviour
     private void Start()
     {
         healthBarValue.text = Mathf.RoundToInt(playerStats.Health).ToString();
-        maxHealth = playerStats.Health;
     }
 
     private void OnEnable()

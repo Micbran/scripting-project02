@@ -21,6 +21,11 @@ public class ActorStats : MonoBehaviour
         get { return maxHealth; }
     }
 
+    public bool IsPlayer
+    {
+        get { return isPlayer; }
+    }
+
     public void TakeDamage(float damageAmount)
     {
         

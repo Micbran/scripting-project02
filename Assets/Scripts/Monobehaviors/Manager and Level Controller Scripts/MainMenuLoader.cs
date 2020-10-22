@@ -17,6 +17,12 @@ public class MainMenuLoader : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
+    public void ResetHighScore()
+    {
+        PlayerPrefs.DeleteKey("HighScore");
+        highScoreField.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
+    }
+
     public void ExitGame()
     {
         Application.Quit();
