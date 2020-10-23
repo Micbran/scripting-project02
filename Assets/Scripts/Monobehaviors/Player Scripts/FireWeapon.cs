@@ -12,9 +12,7 @@ public class FireWeapon : MonoBehaviour
     {
         Vector3 rayDirection = playerCamera.transform.forward;
 
-
-
-        if(Physics.Raycast(rayOrigin.position, rayDirection, out objectHit, 10f))
+        if(Physics.Raycast(rayOrigin.position, rayDirection, out objectHit, 50f))
         {
             var hittables = objectHit.collider.GetComponents(typeof(IHittable));
             foreach(IHittable h in hittables)
@@ -22,10 +20,6 @@ public class FireWeapon : MonoBehaviour
                 h.OnHit(gameObject, 10f); // TODO put damage numbers in somewhere
             }
             Instantiate(hitParticles, objectHit.point, Quaternion.LookRotation(objectHit.normal, Vector3.up));
-        }
-        else
-        {
-            Debug.Log("Miss!");
         }
     }
 }
