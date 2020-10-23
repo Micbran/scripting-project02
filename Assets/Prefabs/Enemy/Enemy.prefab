@@ -254,7 +254,7 @@ MonoBehaviour:
   ragdollObject: {fileID: 6971033300350587000, guid: 654d9f4b4b21f9b489849a4f7e54b820,
     type: 3}
   force: 50
-  lift: 10
+  lift: 5
 --- !u!114 &5513996369263315793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,9 +281,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerFacingTransform: {fileID: 7802505916960312015}
   endOfBarrel: {fileID: 2954341528499359840}
-  turnSpeed: 1
-  shootRange: 10
-  seekRange: 20
+  turnSpeed: 60
+  shootRange: 20
+  seekRange: 30
   projectile: {fileID: 11400000, guid: 3810ba3d12230c344b47e1441c314527, type: 2}
 --- !u!114 &-4555349466322568434
 MonoBehaviour:
