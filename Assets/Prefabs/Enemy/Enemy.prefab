@@ -224,8 +224,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da6912f80bcfa4345a944e64a0402066, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 20
-  maxHealth: 20
+  health: 30
+  maxHealth: 30
   isPlayer: 0
 --- !u!114 &3309983026880840975
 MonoBehaviour:
@@ -282,8 +282,8 @@ MonoBehaviour:
   playerFacingTransform: {fileID: 7802505916960312015}
   endOfBarrel: {fileID: 2954341528499359840}
   turnSpeed: 120
-  shootRange: 30
-  seekRange: 40
+  shootRange: 40
+  seekRange: 50
   projectile: {fileID: 11400000, guid: 3810ba3d12230c344b47e1441c314527, type: 2}
 --- !u!114 &-4555349466322568434
 MonoBehaviour:
