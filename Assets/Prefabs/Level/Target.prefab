@@ -823,7 +823,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4243588cd525cd47949821a06e308d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundEffectToPlay: 4
+  soundEffectToPlay: 7
 --- !u!114 &262925914151238801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -847,5 +847,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5238019, y: 1.4569895, z: 0.23492962}
+  m_Size: {x: 1.5238019, y: 1.4569895, z: 0.28}
   m_Center: {x: 0, y: 0, z: 0}

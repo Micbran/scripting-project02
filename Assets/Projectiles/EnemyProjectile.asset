@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7b11c5db9a30c54988ca032806f2bb4, type: 3}
   m_Name: EnemyProjectile
   m_EditorClassIdentifier: 
-  projectileCooldown: 3
-  projectileRange: 40
+  projectileCooldown: 2.5
+  projectileRange: 50
   projectileDamage: 10
-  projectileSpeed: 18
+  projectileSpeed: 19
   lifeTimeAfterHit: 2
   projectileToFire: {fileID: 6666698760694604649, guid: 849b4d73209cabf4e9e0bf7d3ea0924c,
     type: 3}

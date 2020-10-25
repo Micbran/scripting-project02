@@ -36,8 +36,8 @@ public class EnemyController : MonoBehaviour
                 mainTransform.rotation = Quaternion.RotateTowards(mainTransform.rotation, playerFacingTransform.rotation, turnSpeed * Time.deltaTime);
                 // "lock" rotation to two axes
                 Quaternion lockedRotation = mainTransform.rotation;
-                lockedRotation.x = 0;
-                lockedRotation.z = 0;
+                // lockedRotation.x = 0;
+                // lockedRotation.z = 0;
                 mainTransform.rotation = lockedRotation;
             }
 

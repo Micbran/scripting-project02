@@ -20,7 +20,6 @@ public class Projectile : MonoBehaviour
         damage = d;
         lifeTimeAfterHit = life;
         travelDirection = t - transform.position;
-        travelDirection.y = 0f;
         travelDirection.Normalize();
 
         distanceTravelled = 0f;

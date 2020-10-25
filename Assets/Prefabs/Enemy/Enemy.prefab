@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 6113738114059916650}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -281,8 +281,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerFacingTransform: {fileID: 7802505916960312015}
   endOfBarrel: {fileID: 2954341528499359840}
-  turnSpeed: 60
-  shootRange: 20
+  turnSpeed: 80
+  shootRange: 25
   seekRange: 30
   projectile: {fileID: 11400000, guid: 3810ba3d12230c344b47e1441c314527, type: 2}
 --- !u!114 &-4555349466322568434
@@ -310,7 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9e7d7a145f07f543850633f69c10d97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointValue: 20
+  pointValue: 10
 --- !u!1 &3123585376054135466
 GameObject:
   m_ObjectHideFlags: 0

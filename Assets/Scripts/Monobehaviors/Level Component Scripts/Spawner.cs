@@ -4,6 +4,7 @@ public class Spawner : MonoBehaviour
 {
     [SerializeField] private Transform[] spawnpoints = null;
     [SerializeField] private GameObject[] prefabsToSpawn = null;
+    [SerializeField] private float startDelay = 0f;
     [SerializeField] private float tickRate = 0.5f;
 
     private bool spawned = false;
@@ -11,7 +12,7 @@ public class Spawner : MonoBehaviour
 
     private void Start()
     {
-        InvokeRepeating(nameof(Tick), 0, tickRate);
+        InvokeRepeating(nameof(Tick), startDelay, tickRate);
     }
 
     private void Tick()
