@@ -281,9 +281,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerFacingTransform: {fileID: 7802505916960312015}
   endOfBarrel: {fileID: 2954341528499359840}
-  turnSpeed: 100
-  shootRange: 25
-  seekRange: 30
+  turnSpeed: 120
+  shootRange: 30
+  seekRange: 40
   projectile: {fileID: 11400000, guid: 3810ba3d12230c344b47e1441c314527, type: 2}
 --- !u!114 &-4555349466322568434
 MonoBehaviour:
