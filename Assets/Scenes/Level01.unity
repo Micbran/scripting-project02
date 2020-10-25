@@ -2339,6 +2339,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4136044043316273437, guid: 380ac677bb427334babe8d680dd45b9d,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 380ac677bb427334babe8d680dd45b9d, type: 3}
 --- !u!1 &347367947
@@ -7623,7 +7628,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1232036298}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 0.7815, z: 16}
+  m_LocalPosition: {x: 2, y: 0.72, z: 16}
   m_LocalScale: {x: 5, y: 2, z: 3}
   m_Children: []
   m_Father: {fileID: 1967680736}
@@ -11891,6 +11896,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 6f364c791b3c14444a6a69169359844e, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 3fa4846ea1796a8439c8c835d0a125ee,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 3fa4846ea1796a8439c8c835d0a125ee,
         type: 3}
       propertyPath: m_Name
@@ -11900,6 +11910,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Terrain
+      objectReference: {fileID: 0}
+    - target: {fileID: 3451118302482216456, guid: 3fa4846ea1796a8439c8c835d0a125ee,
+        type: 3}
+      propertyPath: m_Convex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3451118302482216456, guid: 3fa4846ea1796a8439c8c835d0a125ee,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fa4846ea1796a8439c8c835d0a125ee, type: 3}

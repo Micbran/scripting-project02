@@ -12,6 +12,12 @@ public class GroundDetector : MonoBehaviour
             GroundCollide.Invoke();
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("Terrain") || other.gameObject.CompareTag("Enemy"))
+            GroundCollide.Invoke();
+    }
+
     private void OnTriggerExit(Collider other)
     {
         if(other.gameObject.CompareTag("Terrain") || other.gameObject.CompareTag("Enemy"))
