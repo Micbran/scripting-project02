@@ -23,7 +23,8 @@ public class Spawner : MonoBehaviour
             return;
 
         Transform randomTransform = SelectRandomSpawnpoint();
-        spawnedObject = Instantiate(SelectRandomPrefab(), randomTransform.position, randomTransform.rotation);
+        GameObject randomGameObject = SelectRandomPrefab();
+        spawnedObject = Instantiate(randomGameObject, randomTransform.position, randomTransform.rotation);
     }
 
     private Transform SelectRandomSpawnpoint()
