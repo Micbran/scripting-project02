@@ -12,7 +12,18 @@ public class PowerupBarController : MonoBehaviour
         set { powerUpDuration = value; }
     }
 
+    public float TimeLeft
+    {
+        get { return timeLeft; }
+    }
+
     private void OnEnable()
+    {
+        powerupBarForeground.fillAmount = 1f;
+        timeLeft = powerUpDuration;
+    }
+
+    public void ResetBar()
     {
         powerupBarForeground.fillAmount = 1f;
         timeLeft = powerUpDuration;

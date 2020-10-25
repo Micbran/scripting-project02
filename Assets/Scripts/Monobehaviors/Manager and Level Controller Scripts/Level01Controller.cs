@@ -101,6 +101,10 @@ public class Level01Controller : MonoBehaviour
 
     public void ActivateDoubleScorePower(float time)
     {
+        if(doubleScoreActive)
+        {
+            powerupController.ResetBar();
+        }
         doubleScoreActive = true;
         powerupController.PowerUpDuration = time;
         powerupController.enabled = true;
@@ -109,9 +113,12 @@ public class Level01Controller : MonoBehaviour
 
     public void DeactiveDoubleScorePower()
     {
-        doubleScoreActive = false;
-        powerupController.enabled = false;
-        powerupBarPanel.SetActive(false);
+        if(powerupController.TimeLeft <= 1f)
+        {
+            doubleScoreActive = false;
+            powerupController.enabled = false;
+            powerupBarPanel.SetActive(false);
+        }
     }
 
     #endregion

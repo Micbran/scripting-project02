@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileCooldown: 2.5
   projectileRange: 50
-  projectileDamage: 10
+  projectileDamage: 15
   projectileSpeed: 25
   lifeTimeAfterHit: 2
   projectileToFire: {fileID: 6666698760694604649, guid: 849b4d73209cabf4e9e0bf7d3ea0924c,
